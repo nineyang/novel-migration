@@ -1,0 +1,9 @@
+{
+    "require": {
+        "doctrine/migrations": "^1.8",
+        "jakub-onderka/php-console-highlighter": "^0.4.0"
+    },
+    "require-dev": {
+        "symfony/dotenv": "^4.2"
+    }
+}
