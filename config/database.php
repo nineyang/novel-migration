@@ -13,4 +13,8 @@ return [
     'user' => getenv('DB_USERNAME'),
     'password' => getenv('DB_PASSWORD'),
     'dbname' => getenv('DB_NAME'),
+    'defaultDatabaseOptions' => [
+        'charset' => 'utf8mb4',
+        'collate' => 'utf8mb4_general_ci'
+    ]
 ];
