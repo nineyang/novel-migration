@@ -12,6 +12,7 @@ final class Version20181216070109 extends AbstractMigration
 {
     public function up(Schema $schema): void
     {
+        $this->addSql("SET CHARSET utf8mb4");
         # users
         $user_table = $schema->createTable('users')->addOption("collate", "utf8mb4_unicode_ci")->addOption("charset", "utf8mb4");
         $user_table->addColumn('id', 'bigint')->setAutoincrement(true)->setUnsigned(true);
