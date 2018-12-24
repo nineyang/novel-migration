@@ -21,8 +21,8 @@ final class Version20181216070109 extends AbstractMigration
         $user_table->addColumn('union_id', 'string')->setLength(128)->setDefault('')->setNotnull(true);
         $user_table->addColumn('status', 'smallint')->setDefault(0)->setNotnull(true);
         $user_table->addColumn('balance', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true)->setComment('余额');
-        $user_table->addColumn('created_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
-        $user_table->addColumn('updated_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $user_table->addColumn('created_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $user_table->addColumn('updated_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
         $user_table->setPrimaryKey(['id']);
 
         # books
@@ -37,8 +37,8 @@ final class Version20181216070109 extends AbstractMigration
         $book_table->addColumn('views', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true)->setComment('阅读量');
         $book_table->addColumn('likes', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true)->setComment('点赞量');
         $book_table->addColumn('chapter_price', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true)->setComment('每章的价格');
-        $book_table->addColumn('created_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
-        $book_table->addColumn('updated_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $book_table->addColumn('created_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $book_table->addColumn('updated_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
         $book_table->setPrimaryKey(['id']);
 
         # chapters
@@ -50,8 +50,8 @@ final class Version20181216070109 extends AbstractMigration
         $chapter_table->addColumn('context', 'text')->setComment('小说内容');
         $chapter_table->addColumn('status', 'smallint')->setDefault(0)->setNotnull(true);
         $chapter_table->addColumn('serial_number', 'integer')->setDefault(1)->setNotnull(true)->setComment('小说序号，第x章');
-        $chapter_table->addColumn('created_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
-        $chapter_table->addColumn('updated_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $chapter_table->addColumn('created_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $chapter_table->addColumn('updated_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
         $chapter_table->setPrimaryKey(['id']);
 
         # comments
@@ -61,8 +61,8 @@ final class Version20181216070109 extends AbstractMigration
         $comment_table->addColumn('book_id', 'bigint')->setUnsigned(true)->setDefault(0)->setNotnull(true);
         $comment_table->addColumn('context', 'text')->setComment('评价内容');
         $comment_table->addColumn('status', 'smallint')->setDefault(0)->setNotnull(true);
-        $comment_table->addColumn('created_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
-        $comment_table->addColumn('updated_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $comment_table->addColumn('created_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $comment_table->addColumn('updated_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
         $comment_table->setPrimaryKey(['id']);
 
         # incomes
@@ -73,8 +73,8 @@ final class Version20181216070109 extends AbstractMigration
         $income_table->addColumn('type', 'smallint')->setDefault(1)->setNotnull(true)->setComment('收入来源的类型');
         $income_table->addColumn('amount', 'integer')->setDefault(1)->setNotnull(true)->setComment('收入来源的数额');
         $income_table->addColumn('status', 'smallint')->setDefault(0)->setNotnull(true);
-        $income_table->addColumn('created_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
-        $income_table->addColumn('updated_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $income_table->addColumn('created_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $income_table->addColumn('updated_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
         $income_table->setPrimaryKey(['id']);
 
         # payouts
@@ -85,8 +85,8 @@ final class Version20181216070109 extends AbstractMigration
         $payout_table->addColumn('type', 'smallint')->setDefault(1)->setNotnull(true)->setComment('支出原因的类型');
         $payout_table->addColumn('amount', 'integer')->setDefault(1)->setNotnull(true)->setComment('支出原因的数额');
         $payout_table->addColumn('status', 'smallint')->setDefault(0)->setNotnull(true);
-        $payout_table->addColumn('created_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
-        $payout_table->addColumn('updated_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $payout_table->addColumn('created_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $payout_table->addColumn('updated_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
         $payout_table->setPrimaryKey(['id']);
 
         # likes
@@ -97,8 +97,8 @@ final class Version20181216070109 extends AbstractMigration
         $like_table->addColumn('type', 'smallint')->setDefault(1)->setNotnull(true)->setComment('点赞类型');
         $like_table->addColumn('is_canceled', 'smallint')->setDefault(0)->setNotnull(true)->setComment('是否取消');
         $like_table->addColumn('status', 'smallint')->setDefault(0)->setNotnull(true);
-        $like_table->addColumn('created_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
-        $like_table->addColumn('updated_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $like_table->addColumn('created_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $like_table->addColumn('updated_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
         $like_table->setPrimaryKey(['id']);
 
         # recommends
@@ -106,8 +106,8 @@ final class Version20181216070109 extends AbstractMigration
         $recommend_table->addColumn('id', 'bigint')->setAutoincrement(true)->setUnsigned(true);
         $recommend_table->addColumn('type', 'smallint')->setDefault(1)->setNotnull(true)->setComment('推荐类型');
         $recommend_table->addColumn('book_ids', 'text')->setComment('推荐数据的ids');
-        $recommend_table->addColumn('created_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
-        $recommend_table->addColumn('updated_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $recommend_table->addColumn('created_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $recommend_table->addColumn('updated_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
         $recommend_table->setPrimaryKey(['id']);
 
         # book_types
@@ -117,8 +117,8 @@ final class Version20181216070109 extends AbstractMigration
         $book_type_table->addColumn('description', 'text')->setComment('描述');
         $book_type_table->addColumn('sort', 'smallint')->setDefault(1)->setNotnull(true)->setComment('分类排序');
         $book_type_table->addColumn('status', 'smallint')->setDefault(0)->setNotnull(true);
-        $book_type_table->addColumn('created_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
-        $book_type_table->addColumn('updated_at', 'integer')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $book_type_table->addColumn('created_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
+        $book_type_table->addColumn('updated_at', 'bigint')->setDefault(0)->setUnsigned(true)->setNotnull(true);
         $book_type_table->setPrimaryKey(['id']);
 
         # metas 使用nosql 替代 mysql
